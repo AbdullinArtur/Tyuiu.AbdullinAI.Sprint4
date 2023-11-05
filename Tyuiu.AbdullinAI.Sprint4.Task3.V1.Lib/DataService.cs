@@ -21,7 +21,7 @@ namespace Tyuiu.AbdullinAI.Sprint4.Task3.V1.Lib
                 {
                     if (j == 4)
                     {
-                      res += array[i, j];  
+                        res += array[i, j];  
                     }
                 }
             }
