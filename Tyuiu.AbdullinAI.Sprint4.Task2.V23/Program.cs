@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tyuiu.AbdullinAI.Sprint4.Task1.V21.Lib;
+using Tyuiu.AbdullinAI.Sprint4.Task2.V23.Lib;
 
-namespace Tyuiu.AbdullinAI.Sprint4.Task1.V21
+namespace Tyuiu.AbdullinAI.Sprint4.Task2.V23
 {
     internal class Program
     {
@@ -15,39 +15,35 @@ namespace Tyuiu.AbdullinAI.Sprint4.Task1.V21
             Console.Title = "Спринт #4 | Выполнил: Абудллин А. И.  | АСОиУБ-23-1";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
-            Console.WriteLine("* Тема: Одномерные массивы. (ввод с клавиатуры)                           *");
-            Console.WriteLine("* Задание #1                                                              *");
-            Console.WriteLine("* Вариант #21                                                             *");
+            Console.WriteLine("* Тема: Одномерные массивы. (генератор случайных чисел)                   *");
+            Console.WriteLine("* Задание #2                                                              *");
+            Console.WriteLine("* Вариант #23                                                             *");
             Console.WriteLine("* Выполнил: Абдуллин А. И. | АСОиУБ-23-1                                  *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
-            Console.WriteLine("* Дан одномерный целочисленный массив на 11 элементов заполненный         *");
-            Console.WriteLine("* значениями с клавиатуры в диапазоне от 1 до 8 подсчитать произведение   *");
-            Console.WriteLine("* четных элементов массива. С клавиатуры: 2, 4, 8, 5, 2, 6, 5, 8, 8, 6, 6.*");
+            Console.WriteLine("* Дан одномерный целочисленный массив на 15 элементов заполненный         *");
+            Console.WriteLine("* случайными в диапазоне от 3 до 8 подсчитать сумму четных элементов      *");
+            Console.WriteLine("* массива.                                                                *");
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-
-            Console.WriteLine("Введите количчество элементов массива: ");
-
+            Console.WriteLine("Введите количество элемментов массива: ");
             int len = Convert.ToInt32(Console.ReadLine());
+            int[] nums = new int[len];
 
-            int[] array = new int[len];
+            Random rnd = new Random();
 
-            for(int i = 0; i < len; i++)
-            {
-                Console.Write("Введите значение " + i  + "го элемента массива: ");
-                array[i] = Convert.ToInt32(Console.ReadLine());
-            }
-            Console.WriteLine();
-
-
-            Console.WriteLine("Массив: ");
             for (int i = 0; i < len; i++)
             {
-                Console.Write(array[i] + "\t");
+                nums[i] = rnd.Next(3,8);
+            }
+
+            Console.WriteLine("Массив: ");
+            for (int i = 0;i < len; i++)
+            {
+                Console.Write(nums[i] + "\t");
             }
             Console.WriteLine();
 
@@ -56,7 +52,7 @@ namespace Tyuiu.AbdullinAI.Sprint4.Task1.V21
             Console.WriteLine("* РЕЗУЛЬТАТ:                                                              *");
             Console.WriteLine("***************************************************************************");
 
-            int res = ds.Calculate(array);
+            int res = ds.Calculate(nums);
             Console.WriteLine("Результат: " + res);
             Console.ReadKey();
         }

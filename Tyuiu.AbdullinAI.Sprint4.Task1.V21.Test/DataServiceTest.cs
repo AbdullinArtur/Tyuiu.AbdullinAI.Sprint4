@@ -8,7 +8,7 @@ namespace Tyuiu.AbdullinAI.Sprint4.Task1.V21.Test
     public class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Valid()
         {
             DataService ds = new DataService();
 
